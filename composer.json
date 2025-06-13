@@ -1,0 +1,32 @@
+{
+  "name": "e-ops-pf/starter-kit",
+  "description": "Reusable Laravel UI components and helpers.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "eOps",
+      "email": "webmaster@e-ops.tech"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Eops\\StarterKit\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Eops\\StarterKit\\Providers\\StarterKitServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "blade-ui-kit/blade-heroicons": "^2.6"
+  }
+}
