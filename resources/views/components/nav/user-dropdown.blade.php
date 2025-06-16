@@ -11,7 +11,7 @@
                     alt="User avatar"
                     src="{{ $avatar }}" />
             @else
-                {{ strtoupper($initial[0]) }}
+                {{ strtoupper($name[0]) }}
             @endif
         </div>
     </div>
