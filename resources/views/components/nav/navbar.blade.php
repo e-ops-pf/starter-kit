@@ -3,7 +3,7 @@
         <!-- Mobile Dropdown -->
         <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                <x-heroicon-m-bars-4 class="h-5 w-5" />
+                <x-heroicon-m-bars-4 class="h-5 w-5" href=""/>
             </div>
             <ul tabindex="0"
                 class="menu menu-sm dropdown-content bg-primary rounded-box z-1 mt-3 w-52 p-2 shadow">

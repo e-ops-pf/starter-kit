@@ -1,13 +1,18 @@
 @props([
-    'avatar' => 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png?20200919003010',
+    'avatar' => null,
+    'name' => 'User',
 ])
 
 <div class="dropdown dropdown-end">
     <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
         <div class="w-10 rounded-full">
+            @if($avatar)
             <img
                     alt="User avatar"
                     src="{{ $avatar }}" />
+            @else
+                {{ strtoupper($initial[0]) }}
+            @endif
         </div>
     </div>
     <ul tabindex="0"
