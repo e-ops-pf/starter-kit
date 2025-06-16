@@ -8,10 +8,12 @@
             id="{{ $id }}"
             name="{{ $name }}"
             type="{{ $type }}"
-            placeholder="{{ $placeholder }}"
+            @if($placeholder)
+            placeholder="{{ $placeholder}}"
+            @endif
             @if($required) required @endif
             @if($disabled) disabled @endif
-            @if (! $isLivewire)
+            @if (! $isLivewire && ! empty($resolvedValue))
                 value="{{ $resolvedValue }}"
             @endif
 

@@ -39,7 +39,7 @@ class Input extends Component
         public ?string $prefix = null,
     ) {
 
-        $baseClass = $this->type === 'file' ? 'file-input file-input-bordered w-full' : 'input input-bordered w-full';
+        $baseClass = $this->type === 'file' ? 'file-input w-full' : 'input input-bordered w-full';
 
         $this->initFormField(
             name: $name,
