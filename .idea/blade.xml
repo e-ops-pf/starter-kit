@@ -22,6 +22,7 @@
       <data directive="@csrf" />
       <data directive="@dd" injection="true" prefix="&lt;?php&#10;dd(" suffix="); ?&gt;" />
       <data directive="@default" />
+      <data directive="@detectLivewire" />
       <data directive="@disabled" injection="true" prefix="&lt;?php if(" suffix=") {echo 'disabled';}?&gt;" />
       <data directive="@dump" injection="true" prefix="&lt;?php&#10;dump(" suffix="); ?&gt;" />
       <data directive="@each" injection="true" prefix="&lt;?php&#10;echo $__env-&gt;renderEach(" suffix="); ?&gt;" />
