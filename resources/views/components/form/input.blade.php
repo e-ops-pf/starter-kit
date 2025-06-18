@@ -24,5 +24,5 @@
         <x-sk::form.help>{{ $help }}</x-sk::form.help>
     @endif
 
-    <x-sk::form.error :name="$name" />
+    <x-sk::form.error :$name :$type :$multiple />
 </div>

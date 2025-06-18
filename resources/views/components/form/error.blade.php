@@ -1,4 +1,4 @@
-@props(['name'])
+@props(['name', 'type' => 'text', 'multiple' => false])
 
 @if($type === 'file' && $multiple)
     @foreach ($errors->get( rtrim($name, []) . '.*') as $messages)
