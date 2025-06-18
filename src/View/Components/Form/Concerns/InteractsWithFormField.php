@@ -38,8 +38,22 @@ trait InteractsWithFormField
 
     public function render(): View
     {
+        $multipleInputFileHasError = false;
 
-        if (session('errors')?->has($this->name)) {
+        if(isset($this->type) && isset($this->multiple)) {
+            if($this->type === 'file' && $this->multiple) {
+                if(session('errors') !== null)
+                {
+                    foreach (session('errors')->getMessages() as $key => $error) {
+                        if (str_starts_with($key, rtrim($this->name, '[]') . '.')) {
+                            $multipleInputFileHasError = true;
+                        }
+                    }
+                }
+
+            }
+        }
+        if(session('errors')?->has($this->name) || $multipleInputFileHasError) {
             $this->inputClasses .= ' input-error';
         }
         if($this->readonly)

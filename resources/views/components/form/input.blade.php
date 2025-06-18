@@ -16,6 +16,7 @@
             @if (! $isLivewire && ! empty($resolvedValue))
                 value="{{ $resolvedValue }}"
             @endif
+            @if($multiple) multiple @endif
 
             {{ $attributes->merge(['class' => $inputClasses]) }}
     />
@@ -24,5 +25,17 @@
         <x-sk::form.help>{{ $help }}</x-sk::form.help>
     @endif
 
-    <x-sk::form.error :$name :$type @isset($multiple) :multiple="$multiple" @endisset />
+
+
+        @if($type === 'file' && $multiple)
+            @foreach($errors->get(rtrim($name, '[]') . '.*') as $error)
+                <p class="text-sm text-error mt-1">
+                    {{ $error[0] }}
+                </p>
+
+            @endforeach
+        @else
+            <x-sk::form.error :name="$name" />
+        @endif
+
 </div>

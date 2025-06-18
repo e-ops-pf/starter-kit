@@ -19,6 +19,7 @@ class Input extends Component
      * @param  bool  $required
      * @param  bool  $disabled
      * @param  bool  $readonly Will act as disabled, but keep an HTML-sendable value
+     * @param  bool  $multiple If true, the input will be a multiple file upload input.
      * @param  string  $gridLayout The form section component offers a grid of 12 columns. Adjust this parameter as needed.
      * @param  mixed|null  $value
      * @param  mixed|null  $model If $model->$name exists, you can just set the model instead of a value.
@@ -33,6 +34,7 @@ class Input extends Component
         public bool $required = false,
         public bool $disabled = false,
         public bool $readonly = false,
+        public bool $multiple = false,
         public string $gridLayout = '',
         public mixed $value = null,
         public mixed $model = null,
