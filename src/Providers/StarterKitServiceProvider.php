@@ -22,5 +22,10 @@ class StarterKitServiceProvider extends ServiceProvider
                             @endphp
                         BLADE;
         });
+
+        $this->publishes([
+                __DIR__.'/../../public/js/e-ops-pf/starter-kit' => public_path('js/e-ops-pf/starter-kit'),
+        ], 'e-ops-pf-sk');
+        
     }
 }
