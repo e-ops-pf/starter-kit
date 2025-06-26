@@ -1,0 +1,11 @@
+{
+      "name": "@e-ops-pf/starter-kit",
+        "version": "1.0.0",
+          "private": true,
+            "scripts": {
+                "build": "vite build"
+                  },
+                    "devDependencies": {
+                        "vite": "^5.0.0"
+                          }
+                          }
