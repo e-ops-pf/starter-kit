@@ -15,7 +15,7 @@
                 <x-heroicon-m-bars-4 class="h-5 w-5"/>
             </div>
             <ul
-                class="menu menu-sm dropdown-content bg-primary rounded-box z-1 mt-3 w-52 p-2 shadow">
+                class="menu menu-sm dropdown-content bg-primary rounded-box z-1 mt-3 w-52 p-2 shadow w-fit">
                 {{ $menu }}
             </ul>
         </div>
