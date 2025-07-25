@@ -9,7 +9,7 @@
         @if($title)
             <h3 class="font-bold">{{ $title }}</h3>
         @endif
-        <span>{{ $message }}</span>
+        <span>{!! $message !!}</span>
     </div>
     <button @click="show = false" class="btn btn-sm btn-ghost text-xl">&times;</button>
 </div>
