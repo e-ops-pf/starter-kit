@@ -3,12 +3,25 @@ import path from 'path'
 
 export default defineConfig({
     build: {
-        outDir: 'public/js/e-ops-pf/starter-kit',
+        outDir: 'public', // we handle subfolders manually
         emptyOutDir: true,
         rollupOptions: {
-            input: 'resources/js/app.js',
+            input: {
+                js: 'resources/js/app.js',
+                css: 'resources/css/app.css',
+            },
             output: {
-                entryFileNames: 'app.js',
+                entryFileNames: (chunkInfo) => {
+                    return chunkInfo.name === 'js'
+                        ? 'js/e-ops-pf/starter-kit/app.js'
+                        : 'css/e-ops-pf/starter-kit/app.js' // css is still treated as a chunk
+                },
+                assetFileNames: (assetInfo) => {
+                    if (assetInfo.name.endsWith('.css')) {
+                        return 'css/e-ops-pf/starter-kit/app.css'
+                    }
+                    return 'assets/[name].[ext]'
+                },
             },
         },
     },
