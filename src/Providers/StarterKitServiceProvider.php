@@ -25,6 +25,7 @@ class StarterKitServiceProvider extends ServiceProvider
 
         $this->publishes([
                 __DIR__.'/../../public/js/e-ops-pf/starter-kit' => resource_path('js/vendor/e-ops-pf/starter-kit'),
+                __DIR__.'/../../public/css/e-ops-pf/starter-kit' => resource_path('css/vendor/e-ops-pf/starter-kit')
         ], 'e-ops-pf-sk');
         
     }
