@@ -2,6 +2,7 @@
     'label' => 'Submit',
     'cancel' => null,
     'cancelLabel' => 'Cancel',
+    'showMobileErrorHint' => true,
 ])
 
 @if ($cancel)
@@ -10,14 +11,26 @@
             {{ $cancelLabel }}
         </a>
 
-        <button type="submit" class="btn btn-primary w-full md:w-1/2">
-            {{ $label }}
-        </button>
+        <div class="w-full md:w-1/2">
+            <button type="submit" class="btn btn-{{ $errors->any() && $showMobileErrorHint ? 'error' : 'primary' }} w-full">
+                {{ $label }}
+            </button>
+            @if($errors->any())
+                <div class="text-error lg:hidden">
+                    *Des erreurs ont été constatées, veuillez scroller vers le haut si vous ne les voyez pas.
+                </div>
+            @endif
+        </div>
     </div>
 @else
     <div class="mt-3">
-        <button type="submit" class="btn btn-primary w-full">
+        <button type="submit" class="btn btn-{{ $errors->any() && $showMobileErrorHint ? 'error' : 'primary' }} w-full">
             {{ $label }}
         </button>
+        @if($errors->any())
+            <div class="text-error lg:hidden">
+                *Des erreurs ont été constatées, veuillez scroller vers le haut si vous ne les voyez pas.
+            </div>
+        @endif
     </div>
 @endif
