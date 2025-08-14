@@ -13,7 +13,11 @@
                 type: event.detail.type,
             };
 
-            setTimeout(() => toast = null, 4000);
+            const delay = event.detail.timeout ?? 4000;
+
+            if (delay > 0) {
+                setTimeout(() => toast = null, delay);
+            }
         })
     "
     class="toast {{ $position }} z-50"
