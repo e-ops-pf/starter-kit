@@ -13,6 +13,10 @@
                 type: event.detail.type,
             };
 
+            if (event.detail.scrollToTop) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
             const delay = event.detail.timeout ?? 4000;
 
             if (delay > 0) {
